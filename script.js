@@ -1,3 +1,25 @@
+document.addEventListener('DOMContentLoaded', function(){
+    const header = document.querySelector('header');
+    const heroSection = document.getElementById('hero-section');
+
+    function handleHeaderFade(){
+        if(!header || !heroSection)return;
+        // const rect = heroSection.getBoundingClientRect();
+        const heroHeight = heroSection.offsetHeight;
+        if(window.scrollY >= heroHeight - header.offsetHeight){
+            header.classList.add('transparent');
+        }else{
+            header.classList.remove('transparent');
+        }
+    }
+    window.addEventListener('scroll', handleHeaderFade);
+    handleHeaderFade();
+});
+
+
+
+
+
 const headingElements = document.getElementById("changing-headings")
 const heading = ["Music", "BEATS", "AUDIO", "REMIX"];
 let index = 0;
@@ -146,22 +168,29 @@ document.addEventListener('DOMContentLoaded', function(){
 
     function updateMissionSlider(){
         missionSlides.forEach((slide, idx) => {
-            slide.classList.toggle('active', idx === missionCurrent);
-        });
-    }
+         let offset = idx - missionCurrent;
+         if (offset > totalSlides / 2) offset -= totalSlides;
+         if (offset < -totalSlides / 2) offset += totalSlides;
+         slide.style.opacity = offset === 0 ? '1' : '0.7';
+         slide.style.zIndex = offset === 0 ? '3' : '2';
+         slide.style.pointerEvents = offset === 0 ? 'auto' : 'none';
+         slide.style.transform = `translate(-50%, -50%) translateX(${offset * 50}%) scale(${offset === 0 ? 1 : 0.92})`;
+            });
+        }
+    
 
     setInterval(() => {
         missionCurrent = ( missionCurrent + 1) % totalSlides;
         updateMissionSlider();
-    }, 2500);
+    }, 3500);
     updateMissionSlider();
 })
 
-function updateMissionSlider() {
-  missionSlides.forEach((slide, idx) => {
-    slide.classList.toggle('active', idx === missionCurrent);
-  });
-}
+// function updateMissionSlider() {
+//   missionSlides.forEach((slide, idx) => {
+//     slide.classList.toggle('active', idx === missionCurrent);
+//   });
+
     
 document.addEventListener('DOMContentLoaded', function(){
     const contactBtn = document.querySelector('.contact button');

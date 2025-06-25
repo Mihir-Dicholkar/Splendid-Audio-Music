@@ -296,6 +296,46 @@ header .navbar{
   margin-bottom: 44px;
   line-height: 1.7;
 }
+.crm{
+      display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url(/Source/source/9.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      min-height: 100vh;
+      margin: 0;
+}
+.crm-content{
+       position: relative;
+    margin-left: 200px;
+  /* background: linear-gradient(180deg, #050505, #9795959a); */
+  max-width: 700px;
+  min-height: 420px;
+  margin: 48px auto;
+  padding: 48px 40px 60px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  text-align: center; 
+}
+.crm-content h1{
+       font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 3.5rem;
+  color: #fff;
+  margin-bottom: 32px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+.crm-content p{
+       color: #fff;
+  font-family: cursive;
+  font-size: 1.35rem;
+  margin-bottom: 44px;
+  line-height: 1.7;
+}
 .team{
        display: flex;
     flex-direction: row;
@@ -308,6 +348,13 @@ header .navbar{
       background-position: center;
       min-height: 100vh;
       margin: 0;
+}
+
+#frame{
+      position: relative;
+    margin-left: 60px;
+    margin-top: -120px;
+    width: 40vw;
 }
 .team .team-image{
     position: relative;
@@ -356,6 +403,7 @@ header .navbar{
   text-shadow: 0 2px 12px rgba(44,83,100,0.18);
 }
 #bio-image,
+#frame,
 #special-image,
 #team-image {
   opacity: 0;
@@ -365,6 +413,7 @@ header .navbar{
 }
 
 #bio-image.visible,
+#frame.visible,
 #special-image.visible,
 #team-image.visible {
   opacity: 1;

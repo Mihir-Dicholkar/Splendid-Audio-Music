@@ -14,7 +14,7 @@ function fadeInOnScrollById(ids){
     });
 }
 window.addEventListener('scroll', () => {
-    fadeInOnScrollById(['bio-image','special-image', 'team-image']);
+    fadeInOnScrollById(['bio-image','special-image', 'frame', 'team-image']);
 });
 
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const essentialImgs = document.querySelectorAll('.essential-img');
         essentialImgs.forEach(img => {
             img.addEventListener('click',function(){
-                essentialImgs.forEach(i => i.classList.remove('activ'));
+                essentialImgs.forEach(i => i.classList.remove('active'));
                 this.classList.add('active');
             } )
         })
